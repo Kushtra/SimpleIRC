@@ -58,7 +58,6 @@ $messageForm.addEventListener('submit', (e) => {
     $messageFormButton.removeAttribute('disabled');
     $messageFormInput.value = '';
     $messageFormInput.focus();
-    console.log('Message was delivered!');
   });
 });
 
@@ -68,7 +67,6 @@ $locationButton.addEventListener('click', () => {
   navigator.geolocation.getCurrentPosition((position) => {
     socket.emit('sendLocation', position.coords.latitude, position.coords.longitude, (error) => {
       $locationButton.removeAttribute('disabled');
-      console.log('Location sent successfuly!');
     });
   });
 });
